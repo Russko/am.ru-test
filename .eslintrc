@@ -1,0 +1,14 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "browser": true
+  },
+  "rules": {
+    "semi": [2, "never"]
+  }
+}
