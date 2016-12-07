@@ -10,7 +10,7 @@ exports.config = {
   // according to your user and key information. However, if you are using a private Selenium
   // backend you should define the host address, port, and path here.
   //
-  host: process.env.SELENIUM_HOST || '0.0.0.0',
+  host: process.env.SELENIUM_HOST || 'localhost',
   port: process.env.SELENIUM_PORT || 4444,
   path: '/wd/hub',
 
@@ -80,7 +80,7 @@ exports.config = {
   //
   // Set a base URL in order to shorten url command calls. If your url parameter starts
   // with "/", then the base url gets prepended.
-  baseUrl: process.env.BASE_URL || 'http://cabinet.am.ru',
+  baseUrl: process.env.BASE_URL || 'http://cabinet.am.ug',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 30000,

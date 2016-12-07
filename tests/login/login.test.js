@@ -1,5 +1,7 @@
 import { expect } from 'chai'
 import LoginPage from './login.po'
+import CabinetPage from '../cabinet/cabinet.po'
+import RegistrationPage from '../registration/registration.po'
 
 describe('Login Page', () => {
   let page
@@ -9,22 +11,30 @@ describe('Login Page', () => {
     page.open()
   })
 
-  it('should have a title', () => {
+  it('Проверка title на странице Авторизации', () => {
     const title = browser.getTitle()
     expect(title).to.equal(page.title)
   })
 
-  it('should not login an unknown user', () => {
-    page.login('misha@am.ru', 'test123')
+  it('Переход по ссылке на страницу регистрации', () => {
+    page.registrationLink().click()
+    const registrationPage = new RegistrationPage()
+    expect(registrationPage.check()).to.equal(true)
+  })
+
+  it('Нельзя авторизоваться неизвестным юзером', () => {
+    page.login('unknown@am.ru', 'test123')
     expect(page.check()).to.equal(true)
   })
 
-  it('тест кейс1', () => {
+  it('Нельзя авторизоваться с неверным паролем', () => {
+    page.login('test9@lackmail.ru', 'test123')
+    expect(page.check()).to.equal(true)
   })
 
-  it('тест кейс2', () => {
-  })
-
-  it('тест кейс3', () => {
+  it('Авторизация пользователя с валидными данными', () => {
+    page.login('test9@lackmail.ru', 'qwertyp0p')
+    const cabinetPage = new CabinetPage()
+    expect(cabinetPage.check()).to.equal(true)
   })
 })
