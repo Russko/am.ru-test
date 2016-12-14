@@ -21,6 +21,7 @@ exports.config = {
   suites: {
     login: ['./tests/login/**/*.test.js'],
     newOffers: ['./tests/newOffers/**/*.test.js'],
+    registration: ['./test/registration/**/*.test.js'],
     // test: ['./tests/method.test.js'],
   },
   //
