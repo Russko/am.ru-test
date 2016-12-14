@@ -10,10 +10,10 @@ describe('NewOffers Page', () => {
     page.open()
   })
 
-  it('Проверка title на странице Подачи нового объявления', () => {
-    const title = browser.getTitle()
-    expect(title).to.equal(page.title)
-  })
+  // it('Проверка title на странице Подачи нового объявления', () => {
+  //   const title = browser.getTitle()
+  //   expect(title).to.equal(page.title)
+  // })
 
   it.only('Подача нового объявления', () => {
     page.loginHederLink().click()
