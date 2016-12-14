@@ -2,6 +2,7 @@ class LoginPage {
   constructor() {
     this.title = 'Вход на am.ru'
     this.registrationLink = () => browser.element('#content > div > div > div > div > div.b-form__footer > div.au-mbs > a')
+    this.newOffersLink = () => browser.element('#footer-top > div > div > div.au-grid.au-grid-left > div > div > div:nth-child(1) > div:nth-child(2) > dl > dt > a')
   }
 
   open() {

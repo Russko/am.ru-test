@@ -2,6 +2,7 @@ import { expect } from 'chai'
 import LoginPage from './login.po'
 import CabinetPage from '../cabinet/cabinet.po'
 import RegistrationPage from '../registration/registration.po'
+import NewOffersPage from '../newOffers/newOffers.po'
 
 describe('Login Page', () => {
   let page
@@ -9,6 +10,13 @@ describe('Login Page', () => {
   beforeEach(() => {
     page = new LoginPage()
     page.open()
+  })
+
+  it('При нажатии на ссылку в футере редирект к странице Подачи нового объявления', () => {
+    page.newOffersLink().click()
+    browser.pause(3000)
+    const newOffersPage = new NewOffersPage()
+    expect(newOffersPage.check()).to.equal(true)
   })
 
   it('Проверка title на странице Авторизации', () => {

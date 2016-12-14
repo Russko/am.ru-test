@@ -20,6 +20,7 @@ exports.config = {
   exclude: [],
   suites: {
     login: ['./tests/login/**/*.test.js'],
+    newOffers: ['./tests/newOffers/**/*.test.js'],
     // test: ['./tests/method.test.js'],
   },
   //
@@ -80,7 +81,7 @@ exports.config = {
   //
   // Set a base URL in order to shorten url command calls. If your url parameter starts
   // with "/", then the base url gets prepended.
-  baseUrl: process.env.BASE_URL || 'http://cabinet.am.ug',
+  baseUrl: process.env.BASE_URL || 'http://cabinet.am.ug/',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 30000,
@@ -134,7 +135,7 @@ exports.config = {
     ui: 'bdd',
     compilers: ['js:babel-register'],
     timeout: 30000,
-    bail: true,
+    bail: false,
   },
   //
   // =====

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "wdio",
     "test:login": "wdio --suite login",
+    "test:newOffers": "wdio --suite newOffers",
     "selenium:start": "selenium-standalone start"
   },
   "repository": {
