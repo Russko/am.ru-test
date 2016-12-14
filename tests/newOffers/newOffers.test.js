@@ -1,6 +1,7 @@
 import { expect } from 'chai'
 import NewOffersPage from './newOffers.po'
 import LoginPage from '../login/login.po'
+import CabinetPage from '../cabinet/cabinet.po'
 
 describe('NewOffers Page', () => {
   let page
@@ -21,7 +22,8 @@ describe('NewOffers Page', () => {
     page.loginHederLink().click()
     const loginP = new LoginPage()
     loginP.login('test9@lackmail.ru', 'qwertyp0p')
-    page.loginHederLink().click()
+    const cabinetP = new CabinetPage()
+    cabinetP.loginHederLink().click()
     page.brandAcuraLink().click()
     browser.pause(2500)
     page.modelVigorLink().click()
