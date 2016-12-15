@@ -11,8 +11,6 @@ describe('NewOffers Page', () => {
     page.open()
   })
 
-// it('new test', () => {})
-
   it('Проверка title на странице Подачи нового объявления', () => {
     const title = browser.getTitle()
     expect(title).to.equal(page.title)
@@ -23,6 +21,7 @@ describe('NewOffers Page', () => {
     const loginP = new LoginPage()
     loginP.login('test9@lackmail.ru', 'qwertyp0p')
     const cabinetP = new CabinetPage()
+    cabinetP.wait()
     cabinetP.loginHederLink().click()
     page.brandAcuraLink().click()
     browser.pause(2500)
@@ -49,8 +48,8 @@ describe('NewOffers Page', () => {
     page.stepFourLink().click()
     browser.pause(2500)
     page.step4('Тестер', 'Набережная 17', '89650586487', '700000')
-    browser.pause(2500)
-    const title = browser.getTitle()
-    expect(title).to.equal(page.title)
+    browser.pause(15000)
+    const exist = browser.waitForExist('.am-vas-advert__title')
+    expect(exist).to.equal(true)
   })
 })
