@@ -28,8 +28,13 @@ describe('NewOffers Page', () => {
     cabinetP.addOfferButton().click()
     browser.waitForExist('#au-tab-step1')
     page.brandAcuraLink().click()
-    browser.pause(2500)
-    // browser.waitForExist('#models-place')
+    browser.waitForExist('#models-place .column')
+    // browser.waitUntil(() => {
+    //   const container = browser.element('#models-place')
+    //   const columns = container.elements('.column').value
+    //   return columns.length > 0
+    // })
+    // console.log(browser.element('#models-place').elements('.column'))
     page.modelVigorLink().click()
     browser.pause(2500)
     // browser.waitForExist('#doorsnums-place')
