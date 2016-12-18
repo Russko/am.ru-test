@@ -14,7 +14,6 @@ describe('Login Page', () => {
 
   it('При нажатии на ссылку в футере редирект к странице Подачи нового объявления', () => {
     page.newOffersLink().click()
-    browser.pause(3000)
     const newOffersPage = new NewOffersPage()
     expect(newOffersPage.check()).to.equal(true)
   })

@@ -18,6 +18,7 @@ class LoginPage {
     return browser.waitForExist('.au-page-content')
   }
 
+
   login(email, password) {
     const emailInput = () => browser.element('#login')
     const passwordInput = () => browser.element('#loginPassword')

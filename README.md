@@ -6,7 +6,7 @@ It's my the education project. I write automation tests for am.ru website.
 INSTALLATION
 ------------
 
-**You must have installed node.js > v4 and npm**
+**You must have installed node.js > v4, recommended v6.9.2 - v7.2.1 and npm**
 
 Before run project you need install Selenium:
 

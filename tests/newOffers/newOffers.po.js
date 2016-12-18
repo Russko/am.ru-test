@@ -33,14 +33,21 @@ class NewOffersPage {
     milageInput().setValue(kilometers)
   }
 
-  step4(contact, showplace, phone, price) {
+  step4(contact, region, showplace, phone, price) {
     const contactInput = () => browser.element('#contact')
+    const regionLink = () => browser.element('.js-form-region-change')
+    const regionInput = () => browser.element('.js-form-region-input')
     const showplaceInput = () => browser.element('#showplace')
     const phoneInput = () => browser.element('.js-form-phone-phone')
     const priceInput = () => browser.element('#price')
     const addOfferButton = () => browser.element('#add-form-submit')
 
     contactInput().setValue(contact)
+    regionLink().click()
+    browser.waitForExist('.js-form-region-input')
+    regionInput().setValue(region)
+    browser.waitForExist('.ui-menu-item')
+    browser.keys('\uE006')
     showplaceInput().setValue(showplace)
     phoneInput().setValue(phone)
     priceInput().setValue(price)
