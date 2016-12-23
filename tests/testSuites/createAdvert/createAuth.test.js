@@ -1,13 +1,13 @@
 import { expect } from 'chai'
-import NewOffersPage from './newOffers.po'
-import LoginPage from '../login/login.po'
-import CabinetPage from '../cabinet/cabinet.po'
+import AddAdvertPage from '../../pages/addAdvertPage.po'
+import AuthPage from '../../pages/authPage.po'
+import CabinetPage from '../../pages/cabinet.po'
 
 describe('NewOffers Page', () => {
   let page
 
   beforeEach(() => {
-    page = new NewOffersPage()
+    page = new AddAdvertPage()
     page.open()
   })
 
@@ -18,7 +18,7 @@ describe('NewOffers Page', () => {
 
   it.only('Подача нового объявления', () => {
     page.loginHederLink().click()
-    const loginP = new LoginPage()
+    const loginP = new AuthPage()
     loginP.login('test9@lackmail.ru', 'qwertyp0p')
     const cabinetP = new CabinetPage()
     cabinetP.wait()
@@ -40,20 +40,20 @@ describe('NewOffers Page', () => {
     // browser.waitForExist('#doorsnums-place')
     page.doorsLink().click()
     browser.pause(2500)
-    // browser.waitForExist('#years-place')
+    // browser.waitForExist('#years-place .b-input-list')
     page.yearCarLink().click()
     browser.pause(2500)
-    // browser.waitForExist('#modifications-place')
+    // browser.waitForExist('#modifications-place .b-input-list modification')
     page.modificationLink().click()
     browser.pause(2500)
-    // browser.waitForExist('#carstates-place')
+    // browser.waitForExist('#carstates-place .b-input-list')
     page.stateCarLink().click()
-    // browser.waitForExist('#colors-place')
+    // browser.waitForExist('#colors-place .b-palette__wrapper')
     page.colorCarLink().click()
     browser.pause(2500)
     // browser.waitForExist('#milage-place')
     page.milage('3070')
-    // browser.waitForExist('#owners-place')
+    browser.waitForExist('#owners-place .b-input-list')
     page.ptsLink().click()
     page.stepTwoLink().click()
     browser.waitForExist('#au-tab-step2')

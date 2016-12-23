@@ -7,6 +7,8 @@
     "start": "wdio",
     "test:login": "wdio --suite login",
     "test:newOffers": "wdio --suite newOffers",
+    "test:authPage": "wdio --suite authPage",
+    "test:createAuth": "wdio --suite createAuth",
     "test:registration": "wdio --suite registration",
     "selenium:start": "selenium-standalone start"
   },

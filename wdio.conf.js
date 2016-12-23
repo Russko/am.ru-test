@@ -11,6 +11,7 @@ exports.config = {
   // backend you should define the host address, port, and path here.
   //
   host: process.env.SELENIUM_HOST || 'localhost',
+  // host: process.env.SELENIUM_HOST || '192.168.70.127',
   port: process.env.SELENIUM_PORT || 4444,
   path: '/wd/hub',
 
@@ -21,6 +22,8 @@ exports.config = {
   suites: {
     login: ['./tests/login/**/*.test.js'],
     newOffers: ['./tests/newOffers/**/*.test.js'],
+    authPage: ['./tests/testSuites/authorization/**/*.test.js'],
+    createAuth: ['./tests/testSuites/createAdvert/**/*.test.js'],
     registration: ['./test/registration/**/*.test.js'],
     // test: ['./tests/method.test.js'],
   },

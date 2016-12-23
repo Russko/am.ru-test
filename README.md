@@ -20,5 +20,5 @@ Next you must update dependencies:
 
 Finally you can run all project or only one test:
 
-    npm run test:name - run one test suite (npm run test:login,npm run test:new Offers,...)
+    npm run test:name - run one test suite (npm run test:authPage,npm run test:createAuth,...)
     npm run test       - all tests of project
