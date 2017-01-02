@@ -36,3 +36,5 @@ lib
 test-results.xml
 playground.js
 screenshots
+allure-report
+allure-results

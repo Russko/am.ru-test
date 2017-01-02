@@ -7,10 +7,12 @@
     "start": "wdio",
     "test:login": "wdio --suite login",
     "test:newOffers": "wdio --suite newOffers",
-    "test:authPage": "wdio --suite authPage",
+    "test:authPage": "npm run clean && wdio --suite authPage",
     "test:createAuth": "wdio --suite createAuth",
     "test:registration": "wdio --suite registration",
-    "selenium:start": "selenium-standalone start"
+    "selenium:start": "selenium-standalone start",
+    "report": "allure generate allure-results && allure report open",
+    "clean": "rm -rf allure-results"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "mocha": "^2.5.3",
     "request": "^2.72.0",
     "supertest": "^1.2.0",
+    "wdio-allure-reporter": "^0.1.2",
     "wdio-mocha-framework": "^0.3.4",
     "webdriverio": "^4.1.1"
   },
